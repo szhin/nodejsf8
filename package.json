@@ -24,7 +24,8 @@
   "homepage": "https://github.com/szhin/nodejsf8#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^7.0.7"
+    "express-handlebars": "^7.0.7",
+    "nodejs": "^0.0.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

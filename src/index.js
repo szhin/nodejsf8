@@ -21,6 +21,12 @@ app.get("/", (req, res) => {
 app.get("/news", (req, res) => {
   res.render("news");
 });
+//http://localhost:3001/search?q=f8%20lap%20trinh&ref=mycv&author=shin
+app.get("/search", (req, res) => {
+  console.log(req.query);
+  // { q: 'f8 lap trinh', ref: 'mycv', author: 'shin' }
+  res.render("search");
+});
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
