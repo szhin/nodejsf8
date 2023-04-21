@@ -14,3 +14,9 @@ Dữ liệu rất bảo mật vì dữ liệu được gửi ngầm, không đư
 Parameters được truyền trong request body
 Có thể truyền dữ liệu lớn, hạn chế tùy thuộc vào cấu hình của Server.
 Không cache và bookmark được cũng như không được lưu lại trong browser history. + + Không hạn chế về kích thước dữ liệu khi gửi, có thể gửi dữ liệu nhị phân, hình ảnh.
+
+CRUD
+C: CREATE
+R: READ
+U: UPDATE
+D: DELETE

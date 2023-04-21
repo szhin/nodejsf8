@@ -1,16 +1,16 @@
 const Course = require('../models/Course');
+const { mutipleMongooseToObject } = require('../../util/mongoose');
 
 class SiteController {
     index(req, res, next) {
-        // Ta đang đứng ở Controller, bắn yêu cầu qua Model = find()
-        // Model sẽ chọc vào mongodb, nó lấy dữ liệu là courses
-        // và trả dữ liệu ra controller, sau đó controller send về client, browser
         Course.find({})
-            .then((courses) => res.json(courses))
+            .then((courses) => {
+                res.render('home', {
+                    // convert all element in courses to object
+                    courses: mutipleMongooseToObject(courses),
+                });
+            })
             .catch(next);
-        // .catch((err) => next(err));
-
-        // res.render('home');
     }
 
     search(req, res) {
