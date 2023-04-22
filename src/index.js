@@ -13,14 +13,7 @@ const app = express();
 const port = 3001;
 
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Xử lí khi GET và POST khi code nodejs
-app.use(
-    express.urlencoded({
-        extended: true,
-    }),
-);
-// Xử lí khi GET và POST khi code javascript (fetch, axios)
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // HTTP logger
