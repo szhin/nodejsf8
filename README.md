@@ -20,3 +20,10 @@ C: CREATE
 R: READ
 U: UPDATE
 D: DELETE
+
+GET: Gửi yêu cầu lên Server, yêu cầu Server trả lại dữ liệu về Client
+POST: Gửi yêu cầu lên Server, yêu cầu Server tạo mới, lưu lại một dữ liệu
+PUT: Chỉnh sửa hết các field
+PATCH: Chỉnh sửa từng field
+OPTIONS:
+HEAD:
