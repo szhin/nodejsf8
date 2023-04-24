@@ -27,3 +27,8 @@ PUT: Chỉnh sửa hết các field
 PATCH: Chỉnh sửa từng field
 OPTIONS:
 HEAD:
+
+Create: POST
+Update: PUT, PATCH
+Delete: DELETE
+Read: GET

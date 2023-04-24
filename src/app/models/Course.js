@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const slug = require('mongoose-slug-updater');
-
-mongoose.plugin(slug);
+const mongooseDelete = require('mongoose-delete');
 
 const Schema = mongoose.Schema;
 
@@ -13,12 +12,15 @@ const Course = new Schema(
         slug: { type: String, maxLength: 255 },
         videoId: { type: String, required: true },
         level: { type: String },
-        // cái slug của generator, khi tạo name, thì nó xoá khoảng trống, xoá dấu và thêm -
-        // unique để trùng slug thì nó tự thêm kí tự khác vào
         slug: { type: String, slug: 'name', unique: true },
+        deleted: { type: Boolean, default: false },
     },
     { timestamps: true },
 );
+
+// Add Plugins
+mongoose.plugin(slug);
+Course.plugin(mongooseDelete, { deletedAt: true, overrideMethods: 'all' });
 
 // Tự tạo collection cái chữ 'Course' => courses
 module.exports = mongoose.model('Course', Course);
