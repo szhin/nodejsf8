@@ -20,6 +20,21 @@ app.use(express.json());
 // Edit database, Update course
 app.use(methodOverride('_method'));
 
+// Áp dụng middleware cho toàn bộ website
+// app.use(bacBaoVe);
+
+// function bacBaoVe(req, res, next) {
+//     if (['vethuong', 'vevip'].includes(req.query.ve)) {
+//         req.face = 'Gach gach gach';
+//         return next();
+//     }
+
+//     res.status(403).json({
+//         message: 'Access denied',
+//         face: req.face,
+//     });
+// }
+
 // HTTP logger
 app.use(morgan('combined'));
 

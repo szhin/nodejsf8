@@ -21,14 +21,30 @@ R: READ
 U: UPDATE
 D: DELETE
 
-GET: Gửi yêu cầu lên Server, yêu cầu Server trả lại dữ liệu về Client
-POST: Gửi yêu cầu lên Server, yêu cầu Server tạo mới, lưu lại một dữ liệu
-PUT: Chỉnh sửa hết các field
-PATCH: Chỉnh sửa từng field
-OPTIONS:
-HEAD:
-
 Create: POST
 Update: PUT, PATCH
 Delete: DELETE
 Read: GET
+
+# middleware
+
+### Ý nghĩa
+- Phần mềm trung gian đứng giữa các thành phần
+
+browser(client) ---- request ----> server(node)
+browser(client) <--- request ----- server(node)
+
+### Vai trò 
+- giống bác bảo vệ
+Nhà ----> bác bảo vệ 1(middleware 1): Bác 2 (middleware 2):sự kiện (soát vé)
+Nhà <---- Sự kiện
+
+1. Soát vé (kiểm soát - Validation)
+2. Ko cho vào
+3. Cho phép vào
+4: chỉnh sửa, thay đổi
+
+### Ứng dụng
+- Dựng chức năng xác thực (authentication)
+- Chức năng phân quyền (Authorization)
+- Chia sẻ các giá trị của biến tới tất cả các views (BE)
